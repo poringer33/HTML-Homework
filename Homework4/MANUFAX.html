@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANUFAX</title>
+    <script src="https://kit.fontawesome.com/97fbc5005a.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .head {
+        background-color: #333;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content:space-between;
+        line-height: 30px;
+        position: relative;
+    }
+
+    .head_item {
+        display: flex;
+        color: #fff;
+        padding: 10px;
+    }
+
+    .head_icons {
+        right: 0;
+        position: relative;
+        color: #fff;
+    }
+
+    .head_icons i {
+        color: #fff;
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    .title_pic {
+        position: relative;
+    }
+
+    .title_pic img {
+        width: 100%;
+        vertical-align: top;
+        filter: brightness(.5);
+        /* height: 100%; */
+        /* filter: grayscale(1); */
+    }
+
+    .midcontent {
+        background-color: brown;
+        position: relative;
+    }
+
+    .Mantitle a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 50px;
+        position: relative;
+        left: 0;
+    }
+
+    .guided a {
+        padding: 10px;
+        line-height: 50px;
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .search a {
+        color: #fff;
+        line-height: 50px;
+        padding-left: 20px;
+    }
+
+    .content {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    .title h2 {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        /* background-color: red; */
+        padding: 50px;
+        font-size: 30px;
+        position: relative;
+    }
+    .title h2::before{
+        position: absolute;
+        top: 20px;
+        width: 50px;
+        content: '';
+        border-top: 2px solid deepskyblue;
+    }
+
+    .services {}
+
+    .services .title {
+        top: 100px;
+    }
+
+    .box {
+        width: 100%;
+        height: 100%;
+        /* border:2px solid red; */
+        justify-content: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .item_BUILDING {
+        /* margin: 50px; */
+        padding: 50px;
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_BUILDING p {
+        color: dimgray;
+    }
+
+    .item_BUILDING i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .item_PRE_CON {
+        padding: 50px;
+        /* margin: 50px; */
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_PRE_CON p {
+        color: dimgray;
+    }
+
+    .item_PRE_CON i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .item_CON_SER {
+        /* margin: 50px; */
+        padding: 50px;
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_CON_SER p {
+        color: dimgray;
+    }
+
+    .item_CON_SER i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .item_DESING {
+        padding: 50px;
+        /* margin: 50px; */
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_DESING p {
+        color: dimgray;
+    }
+
+    .item_DESING i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .item_CON_MANA {
+        /* margin: 50px; */
+        padding: 50px;
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_CON_MANA p {
+        color: dimgray;
+    }
+
+    .item_CON_MANA i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .item_GENERAL {
+        /* margin: 50px; */
+        padding: 50px;
+        display: flex;
+        width: 350px;
+        height: 100px;
+        border: 1px solid deepskyblue;
+    }
+
+    .item_GENERAL p {
+        color: dimgray;
+    }
+
+    .item_GENERAL i {
+        padding: 20px;
+        font-size: 50px;
+    }
+
+    .history {
+        width: 100%;
+        height: 100%;
+        background-color: #eee;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+
+    .history_pic {
+        padding: 50px 20px 50px 20px;
+        width: 647px;
+    }
+
+    .history_introd {
+        padding-top: 50px;
+        width: 677px;
+    }
+
+    .history_introd p {
+        color: #aaa;
+        font-size: 20px;
+    }
+
+    .history_introd h3 {
+        color: #444;
+
+    }
+
+    .history a {
+        /* background-color: deepskyblue; */
+        color: #fff;
+        text-decoration: none;
+        line-height: 57px;
+    }
+
+    .button {
+        background-color: deepskyblue;
+        /* border-radius: 7%; */
+        width: 163px;
+        height: 57px;
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .button:hover {
+        background-color: #000;
+    }
+
+    .history_title {
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        position: relative;
+    }
+    .history_title::before{
+        position: absolute;
+        content: '';
+        width: 70px;
+        top: 10px;
+        border-top:2px solid deepskyblue;
+    }
+
+    .history_content {
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+</style>
+
+<body>
+
+    <div class="group">
+        <div class="head">
+            <div style="display: flex;">
+                 <div class="head_item"><i class="fas fa-map-marker-alt" style="color: deepskyblue;"></i>
+                Address:4758 Marmora Road,Glasgow,D0489GR</div>
+                <div class="head_item"><i class="fas fa-phone" style="color: deepskyblue;"></i>
+                Phone:(800)123-0045;(800)123-0046</div>
+            </div>
+           
+            <div class="head_icons">
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-vimeo-v"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-pinterest"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        <div class="midcontent">
+            <div class="title_pic">
+                <img src="MANUFAX/asset 1.png" alt="">
+            </div>
+            <div class="content">
+                <div class="Mantitle">
+                    <a href="">
+                        <h1>MANUFAX</h1>
+                    </a>
+                </div>
+                <nav class="guided">
+                    <a href="">HOME</a>
+                    <a href="">ABOUT</a>
+                    <a href="">SERVICES</a>
+                    <a href="">PROJECTS</a>
+                    <a href="">BLOG</a>
+                    <a href="">CONTACTS</a>
+                </nav>
+                <div class="search">
+                    <a href="">
+                        <i class="fas fa-search"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="services">
+            <div class="title">
+                <h2><span> OUR SERVICES</span></h2>
+            </div>
+        </div>
+
+        <div class="box">
+            <div class="item_BUILDING">
+                <div>
+                    <i class="fas fa-home" style="color:deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3>BUILDING INFORMATION MODELING</h3>
+                    <p>Oftentimes physical and functional essence of any construction project needs to be represented
+                        digitally, in a 3D model format. In...</p>
+                </div>
+            </div>
+            <div class="item_CON_SER">
+                <div>
+                    <i class="fab fa-codepen" style="color: deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3> CONSTRUCTION SERVICES</h3>
+                    <p>Our customers love the pace/quality tempo that we show during each of the principal construction
+                        processes! We're comfortable with any...</p>
+                </div>
+            </div>
+            <div class="item_PRE_CON">
+                <div>
+                    <i class="fas fa-th" style="color: deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3>PRE-CONSTRUCTION SERVICES</h3>
+                    <p>We take our time on initial planning before any construction begins, to balance all the financial
+                        and efficiency issues beforehand.This...</p>
+                </div>
+            </div>
+            <div class="item_DESING">
+                <div>
+                    <i class="fas fa-edit" style="color: deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3>DESIGN-BUILD</h3>
+                    <p>If a project is not too complex, we may hire a designer-builder type of contractor, to make the
+                        longevity of...</p>
+                </div>
+            </div>
+            <div class="item_CON_MANA">
+                <div>
+                    <i class="far fa-building" style="color: deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3>CONSTRUCTION MANAGEMENT</h3>
+                    <p>Construction project management is essential. We're using the most time and iterations efficient
+                        life cycles for that.As you may know,...</p>
+                </div>
+            </div>
+            <div class="item_GENERAL">
+                <div>
+                    <i class="fas fa-address-card" style="color: deepskyblue;"></i>
+                </div>
+                <div>
+                    <h3>GENERAL CONTRACTING</h3>
+                    <p>We have a long list of professional contractors, whom our engineers and architects enjoy to work
+                        with on a majority...</p>
+                </div>
+            </div>
+        </div>
+        <div class="history">
+            <div class="history_introd">
+                <div class="history_title">
+                    <h1>OUR HISTORY</h1>
+                </div>
+                <div class="history_content">
+                    <h3>OUR CONSTRUCTION COMPANY HAS BEEN FOUNDED 10 YEARS AGO, AT THE VERY PEAK OF THE BUILDING FRENZY
+                        IN THE US…</h3><br>
+                    <p>Since then we’ve built hundreds of commercial, government and private buildings and facilities.
+                        It may not sound like a lot, but if you estimate the manpower, working hours, materials,
+                        planning and correlating that were all involved in completing each separate project, then our
+                        productivity is immense!</p>
+                </div>
+                <div class="button">
+                    <a href="">READ MORE</a>
+                </div>
+            </div>
+            <div class="history_pic">
+                <img src="MANUFAX/asset 4.png" alt="">
+            </div>
+        </div>
+        <style>
+            .pic{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                filter: brightness(.5);
+            }
+            .picimg{
+                width: 25%;
+                height: 300px;
+            }
+            .picimg img{
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+
+        </style>
+        <div class="pic">
+            <div class="picimg"><img src="MANUFAX/asset 8.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 9.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 10.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 11.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 12.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 13.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 14.jpeg" alt=""></div>
+            <div class="picimg"><img src="MANUFAX/asset 15.jpeg" alt=""></div>
+        </div>
+        <style>
+            .news_title{
+                font-size: 30px;
+                display: flex;
+                justify-content: center;
+                padding: 100px;
+                position: relative;
+                /* background-color: #f00; */
+            }
+            .news_title::before{
+                content: '';
+                width: 70px;
+                position: absolute;
+                top: 80px;
+                border-top: 2px solid deepskyblue;
+            }
+        </style>
+        <h3 class="news_title">RECENT NEWS</h3>
+        <div class="news">
+            <div class="news_item">
+
+            </div>
+            <div class="news_item">
+
+            </div>
+            <div class="news_item">
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

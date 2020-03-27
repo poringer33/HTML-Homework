@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/97fbc5005a.js" crossorigin="anonymous"></script>
+    <title>stylefatory</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .head-title {
+            display: flex;
+            justify-content: center;
+        }
+
+        .head-a {
+            display: flex;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .icons a {
+            color: #000;
+        }
+
+        .head-a a {
+            color: #000;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .head-a a+a::before {
+            content: ' / ';
+            color: #ccc;
+            margin-right: 10px;
+        }
+
+        .pic {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pic a {
+            background-color: #fff;
+            width: 200px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            padding-top: 20px;
+            color: #000;
+            text-decoration: none;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .pic a:hover {
+            color: #fff;
+            background-color: #000;
+        }
+
+        .text {
+            width: 380px;
+            position: absolute;
+            color: #fff;
+            bottom: 0;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="head">
+        <div class="head-title">
+            <div class="logo">
+                <img src="pic/logo.jpg" alt="">
+            </div>
+            <div class="icons">
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+                <a href=""><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="head-a">
+        <a href="">HOME </a>
+        <a href="">PRODUCTS </a>
+        <a href="">BLOG </a>
+        <a href="">SALE </a>
+        <a href="">ABOUT US </a>
+        <a href="">CONTACT US </a>
+    </div>
+
+    <div class="pic">
+        <img src="pic/greeting_image.jpg" alt="" class="w-100 d-block">
+        <a href="">JOIN NOW</a>
+
+        <p class="text d-block">
+            We offer a broad assortment of the best and latest styles from the finest brands. Only at Style
+            Factory,
+            you will find so many exclusive images, videos, customer reviews and expert tips to help you choose the
+            perfect styles and colors.
+        </p>
+    </div>
+
+    <style>
+        .col-12 {
+            /* border: 1px solid #000; */
+            /* opacity: 0.7; */
+        }
+
+        img {
+            width: 100%
+            
+        }
+
+        .browse {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        .browses{
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 70px;
+        }
+        .browses:hover{
+            background-color : rgb(250, 237, 240);
+        }
+        .browses:hover img{
+            opacity: 1;
+            border-bottom: 1px solid black;
+        }
+        .browses:hover p{
+            color: #fff;
+            background-color: #000;
+        }
+        .browses:hover h4{
+
+        }
+        .browses p{
+            border: 2px solid black;
+            text-align: center;
+            padding: 7px 19px;
+            margin: 15px;
+        }
+        .browses h4{
+            font-weight: bold;
+            text-align: center;
+            font-size: 20px;
+            margin: 15px;
+        }
+        .browses img{
+            opacity: 0.7;
+            vertical-align: top;
+        }
+
+        .products {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .see {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .featured {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .follow {
+            display: flex;
+            justify-content: center;
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .span-bro {
+            font-weight: bold;
+        }
+
+        .span-our {
+            color: #333;
+            font-weight: 300
+        }
+
+        .span-pro {
+            font-weight: bold;
+        }
+
+        .span-on {
+            color: #333;
+            font-weight: 300
+        }
+
+        .span-see {
+            font-weight: bold;
+        }
+
+        .span-what {
+            color: #333;
+            font-weight: 300
+        }
+
+        .span-featured {
+            font-weight: bold;
+        }
+
+        .span-fpro {
+            color: #333;
+            font-weight: 300
+        }
+
+        .span-follow {
+            font-weight: bold;
+        }
+
+        .span-instagram {
+            color: #333;
+            font-weight: 300
+        }
+
+        .product{
+            border: 1px solid #eee;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 30px;
+        }
+        .product a{
+            font-size: 20px;
+            padding: 10px 0;
+            font-weight: 100;
+        }
+        .product a:hover{
+            color: deepskyblue;
+        }
+        .product .price{
+            font-weight: bold;
+            font-size: 25px;
+            color: #000
+        }
+        /* text-decoration: line-through; */
+        .product button{
+            border: 3px solid #000;
+            margin: 20px 50px;
+            line-height: 40px;
+            width: 140px 
+        }
+        .product:hover {
+            border: 1px solid #000;
+        }
+        .product button:hover{
+            color: #fff;
+            background-color: #000;
+        }
+        .product .far{
+            color: #aaa;
+        }
+        .product .far:hover{
+            color: pink;
+        }
+        .product .from{
+            color: #aaa;
+        }
+        .product .delete{
+            color: #aaa;
+            font-size: 25px;
+            text-decoration: line-through;
+        }
+
+        /* .products-fructis {
+            border: 1px solid #eee;
+        }
+
+        .products-ess {
+            border: 1px solid #eee;
+        }
+
+        .products-oreal {
+            border: 1px solid #eee;
+        } */
+
+        
+        /* .products-fructis:hover {
+            border: 1px solid #000;
+        }
+
+        .products-ess:hover {
+            border: 1px solid #000;
+        }
+
+        .products-oreal:hover {
+            border: 1px solid #000;
+        } */
+
+        .row a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .btn {
+            margin: 10px 0;
+            border: 2px solid #000;
+        }
+
+        .btn:hover {
+            color: #fff;
+            background-color: #000;
+        }
+        .january{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 1px solid #aaa;   
+        }
+        .january-title{
+            font-weight: bold;
+            font-size: 25px;
+            margin: 10px 0;
+        }
+        .january p{
+            text-align: center;
+        }
+        .january h3{
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            padding: 10px 0;
+        }
+        .txt{
+            font-size: 20px;
+        }
+        .item{
+            text-align: center;
+        }
+        .item .link:hover{
+            color: rgb(236, 126, 144);
+        }
+        .map{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(6, 94, 105);
+            width: 100%;
+            height: 400px;
+            margin: auto;
+        }
+    </style>
+
+    <div class="container">
+        <div class="browse">
+            <h2>
+                <span class="span-bro">BROWSE</span><span class="span-our"> OUR CATEGORIES</span>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="browses col-12 col-md-6 col-lg-3">
+                <img src="pic/category1_c699b5ea-b75e-4185-9a8e-2a65b0fc3814_430x396_crop_top.jpg" alt=""
+                    class="w-100 d-block">
+                <h4>MEN'S HAIR CARE</h4>
+                <p class="btn">7 products</p>
+            </div>
+            <div>
+            </div>
+            <div class="browses col-12 col-md-6 col-lg-3">
+                <img src="pic/category2_430x396_crop_top.jpg" alt="" class="w-100 d-block">
+                <h4>HAIR STYLING</h4>
+                <p class="btn">13 products</p>
+            </div>
+            <div class="browses col-12 col-md-6 col-lg-3">
+                <img src="pic/category3_430x396_crop_top.jpg" alt="" class="w-100 d-block">
+                <h4>HAIR HEALTH TREATMENT</h4>
+                <p class="btn">9 products</p>
+            </div>
+            <div class="browses col-12 col-md-6 col-lg-3">
+                <img src="pic/category4_430x396_crop_top.jpg" alt="" class="w-100 d-block">
+                <h4>HAIR CARE FOR KIDS</h4>
+                <p class="btn">7 products</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="products">
+            <h2>
+                <span class="span-pro">PRODUCTS</span><span class="span-on"> ON SALE</span>
+            </h2>
+        </div>
+        <div class="row">
+            <div class="product col-12 col-md-6 col-lg-3">
+                <img src="pic/argan_oil_hair_mask_01_370x370_crop_top.jpg" alt="" class="oil">
+                <a href="">Argan Oil Hair Mask</a>
+                <span class="price">$60.00</span>
+                <button>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to cart</span>   
+                </button>
+                <div class="proicons">
+                    <a href=""><i class="far fa-heart"></i></a>
+                    <a href=""><i class="far fa-eye"></i></a> 
+                </div>  
+            </div>
+            <div class="product col-12 col-md-6 col-lg-3">
+                <img src="pic/garnier_fructis_01_370x370_crop_top.jpg" alt="" class="fructis">
+                <a href="">Garnier Fructis</a>
+                
+                <span class="price"><span class="from">From</span>$90.00</span>
+                <span class="delete">$100.00</span>
+                <button>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to cart</span>   
+                </button>
+                <div class="proicons">
+                    <a href=""><i class="far fa-heart"></i></a>
+                    <a href=""><i class="far fa-eye"></i></a> 
+                </div>  
+            </div>
+            <div class="product col-12 col-md-6 col-lg-3">
+                <img src="pic/herbal_essences_01_370x370_crop_top.jpg" alt="" class="essences">
+                <a href="">Herbal Essences</a>
+                <span class="price">$80.00</span>
+                <button>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to cart</span>   
+                </button>
+                <div class="proicons">
+                    <a href=""><i class="far fa-heart"></i></a>
+                    <a href=""><i class="far fa-eye"></i></a> 
+                </div>  
+            </div>
+            <div class="product col-12 col-md-6 col-lg-3">
+                <img src="pic/l_oreal_paris_studio_line_1_370x370_crop_top.jpg" alt="" class="oreal">
+                <a href="">L'Oreal Paris Studio Line</a>
+                <span class="price"><span class="from">From</span>$90.00</span>
+                <span class="delete">$100.00</span>
+                <button>
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Add to cart</span>   
+                </button>
+                <div class="proicons">
+                    <a href=""><i class="far fa-heart"></i></a>
+                    <a href=""><i class="far fa-eye"></i></a> 
+                </div>  
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="see">
+            <h2><span class="span-see">SEE </span><span class="span-what">WHAT'S NEW ON OUR BLOG</span></h2>
+        </div>
+
+        <div class="row">
+            <div class="january col-12 col-md-4">
+                <div>
+                    <p class="january-title">14 JANUARY</p>
+                    <div>
+                        <p>Posted by David Braun</p>
+                    </div>
+                </div>
+                <img src="pic/blog3_a7f4371f-e5f2-46ae-a3c0-01ff3da3296e_536x272_crop_top.jpg" alt="">
+                <div class="item">
+                    <h3>
+                        <a href="" class="link">You bring beauty to the world</a>
+                    </h3>
+                    <p class="txt">Coco Chanel said that a woman who cuts her hair is about...</p>
+                    <a href="" class="btn">Read more</a>
+                </div>
+
+            </div>
+            <div class="january col-12 col-md-4">
+                <div>
+                    <p class="january-title">14 JANUARY</p>
+                    <div>
+                        <p>Posted by David Braun</p>
+                    </div>
+                </div>
+                <img src="pic/blog2_536x272_crop_top.jpg" alt="">
+                <div class="item">
+                    <h3>
+                        <a href="" class="link">Of best hair products here</a>
+                    </h3>
+                    <p class="txt">Whoever you are, a professional hair stylist or a person who professionally...</p>
+                    <a href="" class="btn">Read more</a>
+                </div>
+            </div>
+            <div class="january col-12 col-md-4">
+                <div>
+                    <p class="january-title">14 JANUARY</p>
+                    <div>
+                        <p>Posted by David Braun</p>
+                    </div>
+                </div>
+                <img src="pic/blog4_536x272_crop_top.jpg" alt="">
+                <div class="item">
+                    <h3>
+                        <a href="" class="link">Or to be more precise...have...</a>
+                    </h3>
+                    <p class="txt">For saving your time, please use filters: brand, concerns, formulation, ingredient
+                        preferences,...
+                    </p>
+                    <a href="" class="btn">Read more</a>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="featured">
+            <h2><span class="span-featured">FEATURED</span><span class="span-fpro">PRODUCTS</span></h2>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="pic/infiniti_pro_by_conair_hair_designer_3_in_1_styling_system_02_370x370_crop_top.jpg" alt=""
+                    class="w-100">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="pic/instyler_ionic_styler_pro_ceramic_flat_iron_1_370x370_crop_top.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="pic/jose_eber_wet_dry_flat_iron_straightener_01_370x370_crop_top.jpg" alt="">
+            </div>
+            <div class="col-12 col-md-6 col-lg-3">
+                <img src="pic/glide_thru_detangler_hair_comb_or_brush_01_370x370_crop_top.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="follow">
+        <h2><span class="span-follow">FOLLOW</span><span class="span-instagram">US ON INSTAGRAM</span></h2>
+    </div>
+    <div class="map">
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="400" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=%E5%8F%B0%E7%81%A3%20%E6%96%B0%E7%AB%B9%E5%B8%82%20%E4%B8%AD%E8%8F%AF%E5%A4%A7%E5%AD%B8&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.embedgooglemap.net/blog/booking.com-coupon/">booking com bookings</a></div><style>
+        .mapouter{position:relative;height:200px;width:300px;}.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
+    </div>
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

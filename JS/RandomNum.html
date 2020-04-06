@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>猜數字小遊戲</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        h1{
+            color: #fff;
+        }
+        body{
+            background-color: #333;
+        }
+        .RandomNum {
+            /* background-color: deepskyblue; */
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+        }
+
+        .reset {
+            /* background-color: deepskyblue; */
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+
+        }
+
+        button {
+            color: #fff;
+            background-color: #000;
+        }
+
+        .Number {
+            width: 50px;
+            height: 50px;
+            border: none;
+            margin: 2px;
+            font-size: 20px;
+        }
+
+        .guessNum {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .Clean,
+        .Check {
+            width: 50px;
+            height: 50px;
+            border: none;
+            margin: 2px;
+            font-size: 20px;
+            color: rgb(57, 236, 57);
+        }
+        .Clean{
+            color: red;
+        }
+
+        .Range {
+            width: 500px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 30px;
+            margin: 20px;
+            color: #fff;
+        }
+
+        .input {
+            text-align: center;
+            margin: 20px;
+        }
+
+        label {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guessNum">
+
+        <h1>終極密碼</h1>
+        <!-- <label for="" class="Range">0~99</label> -->
+        <div class="Range">
+            <div id="aa1"></div>
+            <div>到</div>
+            <div id="aa2"></div>
+        </div>
+        <div>
+            <button class="RandomNum" id="RandomNum">開始</button>
+            <button class="reset" id="reset">放棄</button><br>
+        </div>
+
+        <input type="text" class="input" id="input" value="">
+        <!-- <label for="" id="answer"></label> -->
+
+        <div>
+            <div>
+                <button class="Number" id="Number" onclick="Numbtn(this)">1</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">2</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">3</button>
+            </div>
+            <div>
+                <button class="Number" id="Number" onclick="Numbtn(this)">4</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">5</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">6</button>
+            </div>
+            <div>
+                <button class="Number" id="Number" onclick="Numbtn(this)">7</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">8</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">9</button>
+            </div>
+            <div>
+                <button class="Clean" id="NULL">X</button>
+                <button class="Number" id="Number" onclick="Numbtn(this)">0</button>
+                <button class="Check" id="CHECK">V</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // function myFunction() {
+        //     var x = Math.floor(Math.random() * 100);
+        //     document.getElementById("answer").innerHTML = x;
+        // }
+        var number1;
+        var min;
+        var max;
+        
+        //開始產生亂數
+        var btn = document.getElementById("RandomNum");
+        btn.onclick = function () {
+            max = 100;
+            min = 0;
+            number1 = Math.floor((Math.random() * 99 + 1));
+            // document.getElementById("answer").innerHTML = "Answer:" + number1;
+            document.getElementById("aa1").innerHTML = min;
+            document.getElementById("aa2").innerHTML = max;
+        }
+        //放棄遊戲
+        var btn = document.getElementById("reset");
+        btn.onclick = function () {
+            // document.getElementById("answer").innerHTML = "";
+            document.getElementById("aa1").innerHTML = "";
+            document.getElementById("aa2").innerHTML = "";
+            document.getElementById('input').value = "";
+        }
+
+        function Numbtn(x){
+           var Num = x.innerHTML;
+           document.getElementById('input').value += Num; 
+        }
+
+        var btn = document.getElementById('NULL');
+        btn.onclick = function(){
+            document.getElementById('input').value = "";
+        }
+
+        var btn = document.getElementById('CHECK');
+        btn.onclick  = function(){
+            var q1 = parseInt(document.getElementById('input').value);
+            if(q1 == number1){
+                alert("恭喜猜到了。");
+                document.getElementById('input').value = "";
+            }
+            else if (q1 > number1){
+                if(q1 < max){
+                    max = q1;
+                }
+                document.getElementById("aa2").innerHTML = max;
+                document.getElementById('input').value = "";
+            }
+            else if(q1 < number1){
+                if(q1 > min){
+                    min = q1;
+                }
+                document.getElementById("aa1").innerHTML = min;
+                document.getElementById('input').value = "";
+            }
+        }
+        // var btnNum = document.getElementById("Number");
+        //         btnNum.onclick=function(x){
+        //         var input = x.innerHTML;
+        //         document.getElementById('input').value += input;
+        //     }
+        // var btnNum = document.getElementById("Number2");
+        //         btnNum.onclick=function(){
+        //         var input = document.getElementById("input");
+        //         input.value += btnNum.innerHTML;
+        //     }
+                
+
+
+    </script>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

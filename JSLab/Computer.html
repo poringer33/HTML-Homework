@@ -5,44 +5,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        button {
+            border: none;
+            width: 30px;
+            height: 30px;
+            margin: 1px;
+        }
+
+        .oper {
+            background-color: rgb(218, 179, 6);
+        }
+
+        .number {
+            color: #fff;
+            background-color: #000;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #333;
+        }
+    </style>
+
 </head>
 
 <body>
     <div>
-        <button id="Add">+</button>
-        <button id="Sub">-</button>
-        <button id="Mul">*</button>
-        <button id="Div">/</button>
+        <input type="text" class="input" id="input">
+    </div>
+
+    <div>
+        <button class="oper" onclick="operbtn('+')">+</button>
+        <button class="oper" onclick="operbtn('-')">-</button>
+        <button class="oper" onclick="operbtn('*')">*</button>
+        <button class="oper" onclick="operbtn('/')">/</button>
     </div>
     <div>
         <div>
-            <button>7</button>
-            <button>8</button>
-            <button>9</button>
+            <button class="number" onclick="Numbtn(this)">7</button>
+            <button class="number" onclick="Numbtn(this)">8</button>
+            <button class="number" onclick="Numbtn(this)">9</button>
+            <button onclick="Cbtn()">C</button>
         </div>
         <div>
-            <button>4</button>
-            <button>5</button>
-            <button>6</button>
+            <button class="number" onclick="Numbtn(this)">4</button>
+            <button class="number" onclick="Numbtn(this)">5</button>
+            <button class="number" onclick="Numbtn(this)">6</button>
         </div>
         <div>
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
+            <button class="number" onclick="Numbtn(this)">1</button>
+            <button class="number" onclick="Numbtn(this)">2</button>
+            <button class="number" onclick="Numbtn(this)">3</button>
         </div>
         <div>
-            <button>0</button>
+            <button class="number" onclick="Numbtn(this)">0</button>
+            <button class="number" onclick="Numbtn(this)">.</button>
+            <button class="number" onclick="equal()">=</button>
         </div>
 
-        
+
     </div>
 
 
 
     <script>
-        var btn =document.getElementById("Add")
-        btn.onclick = function(){
-            
+        var temp = 0; //暫存被運算數
+        var stroper = 0; //暫存運算符號
+        var valueC=0;
+
+
+        function Numbtn(x) {
+            var Num = x.innerHTML;
+            document.getElementById('input').value += Num;
+
+            if (stroper == null) {
+                document.getElementById("input").value = str;
+                stroper = 0;
+                return;
+            };
+
+            if (document.getElementById("input").value == 0) {
+                document.getElementById("input").value = str;
+            } else {
+                document.getElementById("input").value += str;
+            }
+        }
+        function operbtn(str) {
+            equal();
+
+            valueA = document.getElementById('input').value;
+            stroper = str;
+
+            document.getElementById('input').value = "";
+        }
+        function equal() {
+            switch (stroper) {
+                case '+':
+                    document.getElementById("input").value = parseFloat(valueA) + parseFloat(document.getElementById("input").value);
+                    break;
+                case '-':
+                    document.getElementById("input").value = parseFloat(valueA) - parseFloat(document.getElementById("input").value);
+                    break;
+                case '*':
+                    document.getElementById("input").value = parseFloat(valueA) * parseFloat(document.getElementById("input").value);
+                    break;
+                case '/':
+                    document.getElementById("input").value = parseFloat(valueA) / parseFloat(document.getElementById("input").value);
+                    break;
+                default:
+                    break;
+            }
+
+            temp = null;
+            stroper = null;
+        }
+        function Cbtn(str){
+            temp=0;
+            stroper=0;
+            valueC=0;
+            document.getElementById('input').value="";
         }
     </script>
 </body>

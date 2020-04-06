@@ -17,12 +17,15 @@
             padding: 0;
             list-style: none;
         }
-        h1{
+
+        h1 {
             color: #fff;
         }
-        body{
+
+        body {
             background-color: #333;
         }
+
         .RandomNum {
             /* background-color: deepskyblue; */
             border: none;
@@ -66,7 +69,8 @@
             font-size: 20px;
             color: rgb(57, 236, 57);
         }
-        .Clean{
+
+        .Clean {
             color: red;
         }
 
@@ -145,7 +149,7 @@
         var number1;
         var min;
         var max;
-        
+
         //開始產生亂數
         var btn = document.getElementById("RandomNum");
         btn.onclick = function () {
@@ -165,32 +169,34 @@
             document.getElementById('input').value = "";
         }
 
-        function Numbtn(x){
-           var Num = x.innerHTML;
-           document.getElementById('input').value += Num; 
+        function Numbtn(x) {
+            var Num = x.innerHTML;
+            document.getElementById('input').value += Num;
         }
 
         var btn = document.getElementById('NULL');
-        btn.onclick = function(){
+        btn.onclick = function () {
             document.getElementById('input').value = "";
         }
 
         var btn = document.getElementById('CHECK');
-        btn.onclick  = function(){
+        btn.onclick = function () {
             var q1 = parseInt(document.getElementById('input').value);
-            if(q1 == number1){
+            if (q1 == number1) {
                 alert("恭喜猜到了。");
                 document.getElementById('input').value = "";
+                document.getElementById("aa1").innerHTML = "";
+                document.getElementById("aa2").innerHTML = "";
             }
-            else if (q1 > number1){
-                if(q1 < max){
+            else if (q1 > number1) {
+                if (q1 < max) {
                     max = q1;
                 }
                 document.getElementById("aa2").innerHTML = max;
                 document.getElementById('input').value = "";
             }
-            else if(q1 < number1){
-                if(q1 > min){
+            else if (q1 < number1) {
+                if (q1 > min) {
                     min = q1;
                 }
                 document.getElementById("aa1").innerHTML = min;
@@ -207,7 +213,7 @@
         //         var input = document.getElementById("input");
         //         input.value += btnNum.innerHTML;
         //     }
-                
+
 
 
     </script>

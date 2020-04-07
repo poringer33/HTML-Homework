@@ -12,11 +12,19 @@
             list-style: none;
         }
 
+        input {
+            width: 215px;
+            height: 40px;
+            font-size: 20px;
+        }
+
         button {
             border: none;
-            width: 30px;
-            height: 30px;
+            width: 50px;
+            height: 50px;
             margin: 1px;
+            font-size: 20px;
+            font-weight: bold;
         }
 
         .oper {
@@ -27,65 +35,73 @@
             color: #fff;
             background-color: #000;
         }
-        body{
+
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
             background-color: #333;
+        }
+        .wrap{
+            margin-top: 20px;
+            border: 1px solid #000;
         }
     </style>
 
 </head>
 
 <body>
-    <div>
-        <input type="text" class="input" id="input">
-    </div>
-
-    <div>
-        <button class="oper" onclick="operbtn('+')">+</button>
-        <button class="oper" onclick="operbtn('-')">-</button>
-        <button class="oper" onclick="operbtn('*')">*</button>
-        <button class="oper" onclick="operbtn('/')">/</button>
-    </div>
-    <div>
+    <div class="wrap">
         <div>
-            <button class="number" onclick="Numbtn(this)">7</button>
-            <button class="number" onclick="Numbtn(this)">8</button>
-            <button class="number" onclick="Numbtn(this)">9</button>
-            <button onclick="Cbtn()">C</button>
-        </div>
-        <div>
-            <button class="number" onclick="Numbtn(this)">4</button>
-            <button class="number" onclick="Numbtn(this)">5</button>
-            <button class="number" onclick="Numbtn(this)">6</button>
-        </div>
-        <div>
-            <button class="number" onclick="Numbtn(this)">1</button>
-            <button class="number" onclick="Numbtn(this)">2</button>
-            <button class="number" onclick="Numbtn(this)">3</button>
-        </div>
-        <div>
-            <button class="number" onclick="Numbtn(this)">0</button>
-            <button class="number" onclick="Numbtn(this)">.</button>
-            <button class="number" onclick="equal()">=</button>
+            <input type="text" class="input" id="input">
         </div>
 
-
+        <div>
+            <button class="oper" onclick="operbtn('+')">+</button>
+            <button class="oper" onclick="operbtn('-')">-</button>
+            <button class="oper" onclick="operbtn('*')">*</button>
+            <button class="oper" onclick="operbtn('/')">/</button>
+        </div>
+        <div>
+            <div>
+                <button class="number" onclick="Numbtn(this)">7</button>
+                <button class="number" onclick="Numbtn(this)">8</button>
+                <button class="number" onclick="Numbtn(this)">9</button>
+                <button onclick="Cbtn()">C</button>
+            </div>
+            <div>
+                <button class="number" onclick="Numbtn(this)">4</button>
+                <button class="number" onclick="Numbtn(this)">5</button>
+                <button class="number" onclick="Numbtn(this)">6</button>
+            </div>
+            <div>
+                <button class="number" onclick="Numbtn(this)">1</button>
+                <button class="number" onclick="Numbtn(this)">2</button>
+                <button class="number" onclick="Numbtn(this)">3</button>
+            </div>
+            <div>
+                <button class="number" onclick="Numbtn(this)">0</button>
+                <button class="number" onclick="Numbtn(this)">.</button>
+                <button class="number" onclick="equal()">=</button>
+            </div>
+        </div>
     </div>
+
 
 
 
     <script>
         var temp = 0; //暫存被運算數
         var stroper = 0; //暫存運算符號
-        var valueC=0;
+        var valueC = 0;
 
 
+        //數字鍵與小數點
         function Numbtn(x) {
             var Num = x.innerHTML;
             document.getElementById('input').value += Num;
 
+            //避免填入運算後的數字的後面
             if (stroper == null) {
                 document.getElementById("input").value = str;
                 stroper = 0;
@@ -98,7 +114,11 @@
                 document.getElementById("input").value += str;
             }
         }
+
+        //運算符號
         function operbtn(str) {
+
+            //不按等號的連續運算
             equal();
 
             valueA = document.getElementById('input').value;
@@ -106,6 +126,8 @@
 
             document.getElementById('input').value = "";
         }
+
+        //等於=
         function equal() {
             switch (stroper) {
                 case '+':
@@ -127,11 +149,12 @@
             temp = null;
             stroper = null;
         }
-        function Cbtn(str){
-            temp=0;
-            stroper=0;
-            valueC=0;
-            document.getElementById('input').value="";
+        //清除建C
+        function Cbtn(str) {
+            temp = null;
+            stroper = null;
+            valueC = null;
+            document.getElementById('input').value = "";
         }
     </script>
 </body>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+
+<body>
+
+    <div id="start">
+        <h3>請按下按鈕後開始遊戲</h3>
+        <input type="submit" value="送出" onClick="go();">
+    </div>
+    <div id="play">
+        <h3>請輸入一個四位數字</h3>
+        <p id="answer">答案</p>
+        <input type='text'>
+        <input type='button' value='確定'>
+        <p id="message"></p>
+        <p id="info"></p>
+    </div>
+
+    <script>
+        
+
+        // function go() {
+        //     do {
+        //         generateNumber();
+        //     }
+
+        //     while (isDuplicate(a, b, c, d));
+
+        //     function generateNumber() {
+        //         a = Math.floor(Math.random() * 10);
+        //         b = Math.floor(Math.random() * 10);
+        //         c = Math.floor(Math.random() * 10);
+        //         d = Math.floor(Math.random() * 10);
+        //     }
+
+        //     function isDuplicate(n1, n2, n3, n4) {
+        //         var ans = false;
+        //         if (n1 == n2 || n1 == n3 || n1 == n4 || n2 == n3 || n2 == n4 | n3 == n4) {
+        //             ans = true;
+        //         }
+        //         return (ans);
+        //     }
+        //     // var p = document.getElementById('answer');
+        //     // p.innerText = generateNumber();
+        // }
+
+        a=Math.floor(Math.random()*10);
+        b=Math.floor(Math.random()*10);
+        document.getElementById('message').innerHTML=a+'-'+b;
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

@@ -11,45 +11,118 @@
             padding: 0;
             list-style: none;
         }
-        .top{
+
+        body {
+            background-color: #333;
+        }
+
+        .top {
             display: flex;
             justify-content: center;
         }
-        .mid{
+
+        .mid {
             display: flex;
             justify-content: center;
         }
-        button{
+
+        button {
             width: 150px;
             height: 30px;
+            background-color: #000;
+            color: #fff;
+            margin: 2px;
+            font-size: 15px;
+            border: none;
         }
-        .label{
-            width: 48px;
-            border: 1px solid #000;
-            background-color: #ccc;
+
+        .text {
+            background-color: #000;
+            color: #fff;
+            width: 50px;
         }
-        .input{
-            width: 247px;
+
+        .input {
+            width: 250px;
         }
     </style>
 </head>
 
 <body>
     <div>
-        <div class="top">
-            <button>開始</button>
-            <button>放棄重來</button>
-            <button>看答案</button>
+        <div class="top" id="start">
+            <button id="startgame">開始</button>
+            <button id="reset">放棄重來</button>
+            <button id="answer">看答案</button>
         </div>
-        <div class="mid">
-            <label for="" class="label">猜答案</label>
+        <div class="mid" id="play">
+            <p class="text">猜答案</p>
             <input type="text" class="input">
-            <button class="check">猜!</button>
+            <button id="check" class="check">猜!</button>
+
+        </div>
+        <div>
+            <p id="message"></p>
+            <p id="panswer"> </p>
         </div>
 
     </div>
 
     <script>
+        var start = document.getElementById('startgame');
+        start.onclick = function () {
+
+            do {
+                // a = Math.floor(Math.random() * 10);
+                // b = Math.floor(Math.random() * 10);
+                // c = Math.floor(Math.random() * 10);
+                // d = Math.floor(Math.random() * 10);
+                guessnumber();
+            }
+            while (a == b || a == c || a == d || b == c || b == d || c == d);
+            document.getElementById('message').innerHTML = a + "" + b + "" + c + "" + d;
+
+        }
+        function guessnumber() {
+            a = Math.floor(Math.random() * 10);
+            b = Math.floor(Math.random() * 10);
+            c = Math.floor(Math.random() * 10);
+            d = Math.floor(Math.random() * 10);
+        }
+
+        // var check = document.getElementById('check');
+        // check.onclick = function () {
+        //     var input = document.getElementsByClassName('input');
+        //     if (input = a + "" + b + "" + c + "" + d) {
+        //         alert("恭喜猜到了");
+        //     }
+
+        // }
+
+        var answer = document.getElementById('answer');
+        answer.onclick = function () {
+            alert("答案是:"+a + "" + b + "" + c + "" + d);
+            document.getElementById('panswer').innerHTML = a + "" + b + "" + c + "" + d;
+        }
+        //Reset 放棄重來
+        var reset = document.getElementById('reset');
+        reset.onclick = function () {
+            a = "";
+            b = ""; 
+            c = ""; 
+            d = "";
+            document.getElementById('message').innerHTML = "";
+            document.getElementById('panswer').innerHTML = "";
+        }
+        
+
+        function isDuplicate(n1, n2, n3, n4) {
+            var ans = false;
+            if (n1 == n2 || n1 == n3 || n1 == n4 || n2 == n3 || n2 == n4 | n3 == n4) {
+                ans = true;
+            }
+            return (ans);
+        }
         
     </script>
 </body>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+           * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+
+        /* Optional: Makes the sample page fill the window. */
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+</body>
+<script>
+    // var input =document.getElementById('input');
+    // input.value = "987";
+    // let left=[];
+    // $.ajax({
+
+    //     type: "Get",
+    //     url: "http://127.0.0.1:5501/MaskData.json",
+    //     success: function (response) {
+    //         console.log(response);
+
+    //         // response.features.forEach(item => {
+    //         //     left.push(response.features[0].geometry['coordinates'][0]);
+    //         //     debugger;
+    //         // });
+
+
+    //     },
+    //     error: function (response) {
+    //         console.log("Error");
+    //     }
+    // });
+    // response.features[0].geometry
+    function initMap() {
+        // The location of Uluru
+        var uluru = { lat: 24.7571306, lng: 120.9500752 };
+        // The map, centered at Uluru
+        //new 一個新的googlemap
+        var img = {
+            url: "http://www.oxxostudio.tw/img/articles/201801/google-maps-3-marker-icon.png",
+            size: new google.maps.Size(40, 40),
+            scaledSize: new google.maps.Size(40, 40)
+        };
+        var map = new google.maps.Map(
+            document.getElementById('map'), { zoom: 15, center: uluru });
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({ position: uluru, map: map, icon: img });
+
+        map.data.loadGeoJson('https://findmasks.herokuapp.com/places');
+        map.data.setStyle(function (feature) {
+            if (feature.getElementById('maskLeft') > 0) {
+                return {
+                    
+
+
+                };
+            } else {
+                return {
+
+                };
+            }
+        });
+    };
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCv4mqse6ax0xS4zAVYKMOdjOXajvZI7aY&callback=initMap" async 
+    defer></script>
+</body>
+
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    .breadcrumb{
+        display: flex;
+        background-color: #fff;
+    }
+    .breadcrumb li + li:before{
+        content: '>';
+        margin: 0 10px;
+    }
+    .breadcrumb li a{
+        color: #D3a13a;
+    }
+    .container{
+        display: flex;
+        justify-content: start;
+        margin-left: -30px;
+    }
+    .container h1{
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    .cart-continue-btn{
+        background-color: #333;
+        color: #fff;
+    }
+    .cart-continue-btn:hover{
+        background-color:#fff;
+        color: #333;
+        border: 1px solid #000;
+    }
+    .empty-cart-message p{
+        color: #888;
+        text-align: center;
+    }
+    .cart-continue-btn-revese{
+        border: 1px solid#000;
+    }
+    .cart-continue-btn-revese:hover{
+        color:skyblue;
+    }
+    .cart-continue-btn-revese span::before{
+        content: '<';
+        font-weight: 700;
+    }
+    .continue-btn-title h4{
+        line-height: 46px;
+        font-size: 16px;
+    }
+    .continue-btn-title{
+        background-color: #ddd;
+    }
+    .continue-btn-btn{
+        background-color: #ddd;
+        height: 70px;
+        /* display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: end; */
+        padding-top: 20px;
+        padding-right: 10px;
+        text-align: end;
+
+    }
+
+    .continue-btn-block{
+        width: 700px;
+        border: 2px solid #ddd;
+    }
+    .item-title ul{
+        display: flex;
+    }
+    .item-title{
+        border-bottom: 2px solid#ddd;
+        border-top: 2px solid#ddd;
+    }
+    .item-block{
+        width: 700px;
+    }
+    .item-title ul li:nth-child(1){
+        font-size: 14px;
+        width: 15%;
+        padding-left: 20px;
+    }
+    .item-title ul li:nth-child(1) img{
+       width: 100%;
+    }
+    .item-title ul li:nth-child(2){
+        font-size: 14px;
+        width: 30%;
+    }
+    .item-title ul li:nth-child(3){
+        font-size: 14px;
+        width: 20%;
+    }
+    .item-title ul li:nth-child(4){
+        font-size: 14px;
+        width: 20%;
+    }           
+    .item-title ul li:nth-child(5){
+        font-size: 14px;
+        width: 13%;
+        padding-right: 20px;
+    }
+    
+    img{
+        vertical-align: middle;
+    }
+    .cart{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    } 
+    .cart-continue-btn-block{
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+    .cart-title h1{
+        font-size: 1.5em;
+        font-weight: 700;
+    }
+    .cart-title{
+        margin-bottom: 20px;
+    }
+    .item-container{
+        display: flex;
+        justify-content: center;
+    }
+    .item-container-txt{
+        display: flex;
+        border-bottom: 2px solid #ddd;
+    }
+    .item-container-txt ul{
+        display: flex;
+    }
+    .item-container-txt li:nth-child(1){
+        font-size: 14px;
+        width: 15%;
+        padding-left: 20px;
+    }
+    .item-container-txt li:nth-child(1) img{
+       width: 100%;
+    }
+    .item-container-txt li:nth-child(2){
+        font-size: 14px;
+        width: 30%;
+    }
+    .item-container-txt li:nth-child(2) h5{
+        font-size: 10px;
+        width: 30%;
+    }
+    .item-container-txt li:nth-child(3){
+        font-size: 14px;
+        width: 20%;
+    }
+    .item-container-txt li:nth-child(4){
+        font-size: 14px;
+        width: 20%;
+    }           
+    .item-container-txt ul li:nth-child(5){
+        font-size: 14px;
+        width: 13%;
+        padding-right: 20px;
+    }
+    .item-container-card{
+        border: 2px solid #eee;
+    }
+    .item-container-block{
+        display: flex;
+    }
+    a{
+        color: #000;
+        text-decoration: none;
+    }
+    .remove-item{
+        color: #D3a13a;
+    }
+    .titlead{
+        height: 50px;
+        font-size: 18px;
+        font-weight: 700;
+        color: #fff;
+        background-color: #D3a13a;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="titlead"> Congratulations! Your order qualifies for Free Delivery.</div>
+    <div class="cart">
+        <div class="item-block">
+            <div class="container">
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li><a href="https://www.furniture.ca/"> Home</a></li>
+                        <li>Shopping Cart</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="cart-title">
+                <h1>Shopping Cart</h1>
+            </div>
+            
+            <div class="item-title">
+                <ul>
+                    <li>photo</li>
+                    <li>Name</li>
+                    <li>Price</li>
+                    <li>Quanitiy</li>
+                    <li>Total</li>
+                </ul>
+            </div>
+
+            <div class="item-container-block">
+                <div class="item-container">
+                    <div class="item-container-txt">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="pic/table.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <h5>
+                                <a href="">
+                                    JENDRAL OUTDOOR ACCENT CHAIR-NATURAL/WHITE
+                                    </a> 
+                                </h5>
+                                <a href="" class="remove-item">Remove Item</a> 
+                            </li>
+                            <li>
+                                <p>$2,345.15</p>
+                            </li>
+                            <li>
+                                <input id="quantity" name="" type="text" value="1" />
+                            </li>
+                            <li>
+                                <p>$2,345.15</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item-container-block">
+                <div class="item-container">
+                    <div class="item-container-txt">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="pic/table1.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <h5>
+                                <a href="">
+                                    JENDRAL OUTDOOR ACCENT CHAIR-NATURAL/WHITE
+                                    </a> 
+                                </h5>
+                                <a href="" class="remove-item">Remove Item</a> 
+                            </li>
+                            <li>
+                                <p>$1,784.15</p>
+                            </li>
+                            <li>
+                                <input id="quantity" name="" type="text" value="1" />
+                            </li>
+                            <li>
+                                <p>$1,784.15</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="item-container-block">
+                <div class="item-container">
+                    <div class="item-container-txt">
+                        <ul>
+                            <li>
+                                <a href="">
+                                    <img src="pic/table2.jpg" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <h5>
+                                <a href="">
+                                    JENDRAL OUTDOOR ACCENT CHAIR-NATURAL/WHITE
+                                    </a> 
+                                </h5>
+                                <a href="" class="remove-item">Remove Item</a> 
+                            </li>
+                            <li>
+                                <p>$968.15</p>
+                            </li>
+                            <li>
+                                <input id="quantity" name="" type="text" value="1" />
+                            </li>
+                            <li>
+                                <p>$968.15</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        <!-- <div class="item-container-card">
+            <div>
+                <p>COSTS BASED ON M9N3X3 Subtotal:$ 5,097.45 Delivery:Free Estimated Tax:$ 662.67Estimated Total:$ 5,760.12HAVE A PROMO CODE? ENTER IT DURING CHECKOUT</p>
+            </div>
+        </div> -->
+            
+            
+            
+            <div class="continue-btn-block">
+                <div class="continue-btn-title">
+                    <h4 style="padding-left: 10px;">DELIVERY</h4>
+                </div>
+
+                <div class="continue-btn-container">
+                    <p style="padding-left: 10px;">
+                        Our customer care team will contact you to confirm your delivery dates.
+                    </p>
+                </div>
+
+                <div class="continue-btn-btn">
+                    <p>
+                        <a href="" class="cart-continue-btn btn">Proceed to Checkout
+                        </a>
+                    </p>
+                </div>
+            </div>
+            <div class="cart-continue-btn-block">
+                <a href="https://www.furniture.ca/" class="btn cart-continue-btn-revese">
+                <span></span> Continue Shopping
+                </a>
+            </div>
+        </div> 
+    </div>
+
+</body>
+</html>

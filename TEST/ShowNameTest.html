@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div p:nth-child(1) {
+            background-color: #f00;
+        }
+
+        div p:nth-child(2) {
+            background-color: #00f;
+        }
+
+        div p:nth-child(3) {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">show Name</h1>
+    <div>
+        <p>Last Name</p>
+        <p>First Name</p>
+        <p>Full Name</p>
+    </div>
+    <img src="" alt="" id="p01">
+
+
+
+    <script>
+        var lastName = '家慶', firstName = '盧', age = 30, gender = true;
+        console.log(lastName + ' ' + firstName);
+
+        var fullName = lastName + ' ' + firstName;
+        // alert(fullName);
+        var title = document.getElementById('title');
+        title.innerHTML = "<h1>顯示我的名字</h1>";
+        title.style.color = '#ff0';
+        title.style.backgroundColor='#f70';
+
+
+        var p1 = document.querySelector('div p:nth-child(1)');
+        var p2 = document.querySelector('div p:nth-child(2)');
+        var p3 = document.querySelector('div p:nth-child(3)');
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+
+        p1.textContent = lastName;
+        p2.textContent = firstName;
+        p3.textContent = fullName;
+        var img = document.getElementById('p01');
+        img.src='http://www.codemagic.com.tw/assets/images/mbr-754x503.jpg';
+        img.width = '300';
+        img.height = '200';
+    </script>
+</body>
+
+</html>

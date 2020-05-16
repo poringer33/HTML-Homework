@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .last{
+            background-color: #f00;
+        }
+        .first{
+            background-color: #00f;
+        }
+        .full{
+            background-color: #0f0;
+        } */
+        div p:nth-child(1) {
+            background-color: #f00;
+        }
+
+        div p:nth-child(2) {
+            background-color: #00f;
+        }
+
+        div p:nth-child(3) {
+            background-color: #0f0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id='title'>Show Name</div>
+
+
+    <div>
+        <p>Last Name</p>
+        <p>first Name</p>
+        <p>Full Name</p>
+    </div>
+
+    <img src="" id="pic01" alt="">
+
+
+    <button id="btn1" onclick="showName()">顯示我的名字</button>
+    <button id="btn2">Click Show fullName</button>
+
+
+    <script>
+
+        var lastName = 'Allen', firstName = '盧', age = 35, gender = false;
+        console.log(lastName + " " + firstName);
+
+
+        var fullName = lastName + " " + firstName;
+
+        var title = document.getElementById("title");
+        title.innerHTML = "<h1>顯示我的名字</h1>";
+        // title.textContent ='顯示我的名字';
+        // title.style.color = "#ff0";
+        // title.style.backgroundColor = "#f70";
+        // alert(fullName);
+        // title.textContent="顯示我的名字";
+
+        var p1 = document.querySelector("div p:nth-child(1)");
+        var p2 = document.querySelector("div p:nth-child(2)");
+        var p3 = document.querySelector("div p:nth-child(3)");
+
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+
+        p1.textContent = lastName;
+        p2.textContent = firstName;
+        p3.textContent = fullName;
+
+        var img = document.getElementById("pic01");
+        img.src = "http://www.codemagic.com.tw/assets/images/mbr-754x503.jpg";
+        img.width = "300";
+        img.height = "200";
+
+        var btn1 = document.getElementById("btn1");
+
+
+        // console.log(btn1);
+
+        function showName() {
+            alert(fullName);
+        }
+
+        var btn2 = document.getElementById("btn2");
+        btn2.onclick = showName;
+
+    </script>
+</body>
+
+</html>
